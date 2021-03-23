@@ -1,5 +1,7 @@
 #include "Book.h"
 
+//book price starts at 0
+
 Book::Book() {
 	netPrice = 0;
 }
