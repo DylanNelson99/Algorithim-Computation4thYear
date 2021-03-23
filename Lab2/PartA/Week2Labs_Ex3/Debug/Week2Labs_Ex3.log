@@ -1,0 +1,18 @@
+﻿  MatrixIntegers.cpp
+  MatrixTemp.cpp
+  Week2Labs_Ex3.cpp
+C:\Users\micha\source\repos\Week2Labs\Week2Labs_Ex3\Week2Labs_Ex3.cpp(37,2): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\micha\source\repos\Week2Labs\Week2Labs_Ex3\MatrixTemp.cpp(12,19): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\micha\source\repos\Week2Labs\Week2Labs_Ex3\MatrixTemp.cpp(7): message : while compiling class template member function 'MatrixTemp<float>::MatrixTemp(void)'
+C:\Users\micha\source\repos\Week2Labs\Week2Labs_Ex3\Week2Labs_Ex3.cpp(51): message : see reference to function template instantiation 'MatrixTemp<float>::MatrixTemp(void)' being compiled
+C:\Users\micha\source\repos\Week2Labs\Week2Labs_Ex3\Week2Labs_Ex3.cpp(51): message : see reference to class template instantiation 'MatrixTemp<float>' being compiled
+  Generating Code...
+  Week2Labs_Ex3.vcxproj -> C:\Users\micha\source\repos\Week2Labs\Debug\Week2Labs_Ex3.exe

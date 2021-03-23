@@ -1,0 +1,8 @@
+﻿  Heap.cpp
+D:\College\Year 4\semester 8\ALGO COMP\Lab5\PartA\Lab5PartA\Lab5PartA\Heap.cpp(27,31): warning C4018: '<': signed/unsigned mismatch
+D:\College\Year 4\semester 8\ALGO COMP\Lab5\PartA\Lab5PartA\Lab5PartA\Heap.cpp(32,31): warning C4018: '<': signed/unsigned mismatch
+D:\College\Year 4\semester 8\ALGO COMP\Lab5\PartA\Lab5PartA\Lab5PartA\Heap.cpp(96,20): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+D:\College\Year 4\semester 8\ALGO COMP\Lab5\PartA\Lab5PartA\Lab5PartA\main.cpp(46,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Lab5PartA.vcxproj -> D:\College\Year 4\semester 8\ALGO COMP\Lab5\PartA\Lab5PartA\Debug\Lab5PartA.exe
