@@ -20,7 +20,7 @@ private:
 	Link: https://stackoverflow.com/questions/2602013/read-whole-ascii-file-into-c-stdstring/2602258#2602258
 	*/
 
-	static const int PSEUDO_EOF = 256;
+	static const int PSEUDO_EOF = 128;
 
 	//Encode
 	static string encodeText(const string& input, HuffmanTree*& huffman_tree_out);

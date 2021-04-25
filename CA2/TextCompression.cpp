@@ -91,7 +91,7 @@ string TextCompression::encodeText(const string & input, HuffmanTree * &huffman_
 	return encoded_string;
 }
 
-//Encode caharacters in the map
+//Encode characters in the map
 string TextCompression::encode_char_map(const string & input, const map<int, string>&char_encoding) {
 	string encoded_string = "";
 	for (int input_char : input) {
