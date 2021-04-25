@@ -4,51 +4,46 @@
 
 using namespace std;
 
+	/*
+	Title : using fstream to read every character including spaces and newline
+	Author : Toby Speight
+	Availability : https://stackoverflow.com/questions/116951/using-fstream-to-read-every-character-including-spaces-and-newline/117015#117015
+	*/
+
 int main() {
 
 	HuffmanTree* huffman_tree;
 
-	ifstream initial_in("initial.txt", ios::binary);																
-	ofstream encoded_out("encoded.txt", ios::binary);
-	huffman_tree = TextCompression::encode_input_file_to_file(initial_in, encoded_out);								
-	initial_in.close();
-	encoded_out.close();
+
+	//Encode text to 1's and 0's
+	ifstream start_in("Start.txt", ios::binary);
+	ofstream encode_out("Encode.txt", ios::binary);
+	huffman_tree = TextCompression::encode_input_to_file(start_in, encode_out);
+	start_in.close();
+	encode_out.close();
+
+	//Decode back to normal text
+	ifstream encode_in("Encode.txt", ios::binary);
+	ofstream decode_out("Decode.txt", ios::binary);
+	TextCompression::decode_input_to_file(encode_in, decode_out, huffman_tree);
+	encode_in.close();
+	decode_out.close();
 
 
-	ifstream encoded_in("encoded.txt", ios::binary);
-	ofstream decoded_out("decoded.txt", ios::binary);
-	TextCompression::decode_input_file_to_file(encoded_in, decoded_out, huffman_tree);								
-	encoded_in.close();
-	decoded_out.close();
-
-
-
-	initial_in.open("initial.txt", ios::binary);
-	ofstream compressed_out("compressed.txt", ios::binary);
+	//Compress file
+	start_in.open("Start.txt", ios::binary);
+	ofstream compress_out("Compress.txt", ios::binary);
 	huffman_tree = nullptr;
-	huffman_tree = TextCompression::compress_input_file(initial_in, compressed_out);								
-	initial_in.close();
-	compressed_out.close();
+	huffman_tree = TextCompression::compress_input(start_in, compress_out);
+	start_in.close();
+	compress_out.close();
 
 
+	//Decompress using Huffman Tree
+	ifstream compress_in("Compress.txt", ios::binary);
+	ofstream decompress_out("Decompress.txt", ios::binary);
+	TextCompression::decompress_input_file(compress_in, decompress_out, huffman_tree);
+	compress_in.close();
+	decompress_out.close();
 
-	ifstream compressed_in("compressed.txt", ios::binary);
-	ofstream decompressed_out("decompressed.txt", ios::binary);
-	TextCompression::decompress_input_file(compressed_in, decompressed_out, huffman_tree);							
-	compressed_in.close();
-	decompressed_out.close();
-
-
-
-	initial_in.open("initial.txt", ios::binary);
-	ofstream independent_compressed_out("independent-compressed.txt", ios::binary);
-	TextCompression::compress_input_file_independent(initial_in, independent_compressed_out);						
-	initial_in.close();
-	independent_compressed_out.close();
-
-
-	ifstream independent_compressed_in("independent-compressed.txt", ios::binary);
-	ofstream independent_decompressed_out("independent-decompressed.txt", ios::binary);
-	TextCompression::decompress_input_file_independent(independent_compressed_in, independent_decompressed_out);	
-	independent_compressed_in.close();
-	independent_decompressed_out.close();
+}

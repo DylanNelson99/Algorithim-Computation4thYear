@@ -3,6 +3,13 @@
 #include <iostream>
 #include <string>
 
+//Alot of help from Geeks for geeks
+/*
+Title: Huffman Coding
+Author: GeeksForGeeks
+Link:https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
+*/
+
 using namespace std;
 
 class HuffmanTree
@@ -16,8 +23,8 @@ private:
 	HuffmanNode* root;
 	int weight = -1;																		
 
-	string get_path_to_char(int to_find);
-	string get_path_to_char(int to_find, HuffmanNode* tree, string path);
+	string get_Path(int to_find);
+	string get_Path(int to_find, HuffmanNode* tree, string path);
 
 	friend class TextCompression;
 	friend class CompareHuffmanTree;

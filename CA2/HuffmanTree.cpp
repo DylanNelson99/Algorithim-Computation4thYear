@@ -16,19 +16,19 @@ HuffmanTree::HuffmanTree(HuffmanTree * left_tree, HuffmanTree * right_node, int 
 	root->right = right_node;
 }
 
-string HuffmanTree::get_path_to_char(int to_find)
+string HuffmanTree::get_Path(int to_find)
 {
-	return get_path_to_char(to_find, root, "");
+	return get_Path(to_find, root, "");
 }
 
-string HuffmanTree::get_path_to_char(int to_find, HuffmanNode * node, string path)
+string HuffmanTree::get_Path(int to_find, HuffmanNode * node, string path)
 {
 	if (node == nullptr || node->data == to_find)
 		return path;
 
 	if (node->left != nullptr) {
 		path.push_back('0');																
-		string returned_path = get_path_to_char(to_find, node->left->root, path);
+		string returned_path = get_Path(to_find, node->left->root, path);
 		if (returned_path != "")
 			return returned_path;
 
@@ -37,7 +37,7 @@ string HuffmanTree::get_path_to_char(int to_find, HuffmanNode * node, string pat
 
 	if (node->right != nullptr) {
 		path.push_back('1');																
-		string returned_path = get_path_to_char(to_find, node->right->root, path);
+		string returned_path = get_Path(to_find, node->right->root, path);
 		if (returned_path != "")
 			return returned_path;
 	}

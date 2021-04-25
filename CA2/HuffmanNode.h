@@ -4,11 +4,13 @@
 
 using namespace std;
 
+//Declare Class
 class HuffmanTree;	
 
 class HuffmanNode
 {
 private:
+	//Adding data members
 	int data = 0;
 	HuffmanTree* left = nullptr;
 	HuffmanTree* right = nullptr;
