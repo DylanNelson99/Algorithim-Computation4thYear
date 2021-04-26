@@ -27,10 +27,10 @@ private:
 	static string encode_char_map(const string& input, const map<int, string>& char_encoding);
 	
 	//Mapping
-	static map<int, string> get_mapping_from_tree(HuffmanTree* huffman_tree, map<int, int> char_frequency);
-	static HuffmanTree* get_huffman_tree_from_map(map<int, int> char_frequency);
-	static priority_queue<HuffmanTree*, vector<HuffmanTree*>, CompareHuffmanTree> get_priority_queue_from_map(map<int, int> char_frequency);
-	static void populate_char_frequency(const string& input, map<int, int>& char_frequency);
+	static map<int, string> get_mapping_from_tree(HuffmanTree* huffman_tree, map<int, int> char_freq);
+	static HuffmanTree* get_huffman_tree_from_map(map<int, int> char_freq);
+	static priority_queue<HuffmanTree*, vector<HuffmanTree*>, CompareHuffmanTree> get_priority_queue_from_map(map<int, int> char_freq);
+	static void populate_char_frequency(const string& input, map<int, int>& char_freq);
 
 	//Decode
 	static string decode_text(const string& input, const HuffmanTree* huffman_tree);
@@ -38,10 +38,10 @@ private:
 	static void get_string_from_file(ifstream& in_file, string& out);
 
 	//Compression
-	static void get_compressed_string(string& encoded_string, string& compressed_string_out);
+	static void get_compressed_string(string& encode_string, string& compress_string_out);
 	static void pad_string_with_zeros(string& to_pad);
 
-	static void get_binary_string(const string& encoded_string, string& binary_string_out);
+	static void get_binary_string(const string& encode_string, string& binary_string_out);
 
 	//Encode HuffmanTree
 
@@ -51,14 +51,14 @@ private:
 	Link: https://engineering.purdue.edu/ece264/17au/hw/HW13?alt=huffman
 	*/
 
-	static string encode_huffman_tree(HuffmanTree* huffman_tree);
-	static string encode_huffman_tree_helper(HuffmanTree* huffman_tree, string& accumulated_string);
+	static string encode_huffmantree(HuffmanTree* huffman_tree);
+	static string encode_huffmantree_helper(HuffmanTree* huffman_tree, string& acc_string);
 
 	//Decode HuffmanTree
 	/*
 	Same link used for decode as encode
 	*/
-	static HuffmanTree* decode_huffman_tree(const string& binary_string, const unsigned int bits_used_for_tree);
+	static HuffmanTree* decode_huffman_tree(const string& binary_string, const unsigned int binary_bits);
 
 public:
 	//Encode

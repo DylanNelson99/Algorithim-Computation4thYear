@@ -4,31 +4,31 @@ using namespace std;
 
 HuffmanTree::HuffmanTree() = default;
 
-HuffmanTree::HuffmanTree(int data_in, int weight_in) :
-	weight{ weight_in },
+HuffmanTree::HuffmanTree(int data_in, int size_in) :
+	size{ size_in },
 	root{ new HuffmanNode(data_in) } {  }
 
-HuffmanTree::HuffmanTree(HuffmanTree * left_tree, HuffmanTree * right_node, int total_weight) :
-	weight{ total_weight },
+HuffmanTree::HuffmanTree(HuffmanTree * l_tree, HuffmanTree * r_node, int total_size) :
+	size{ total_size },
 	root{ new HuffmanNode() } {
 
-	root->left = left_tree;
-	root->right = right_node;
+	root->left = l_tree;
+	root->right = r_node;
 }
 
-string HuffmanTree::get_Path(int to_find)
+string HuffmanTree::get_Path(int find)
 {
-	return get_Path(to_find, root, "");
+	return get_Path(find, root, "");
 }
 
-string HuffmanTree::get_Path(int to_find, HuffmanNode * node, string path)
+string HuffmanTree::get_Path(int find, HuffmanNode * node, string path)
 {
-	if (node == nullptr || node->data == to_find)
+	if (node == nullptr || node->data == find)
 		return path;
 
 	if (node->left != nullptr) {
 		path.push_back('0');																
-		string returned_path = get_Path(to_find, node->left->root, path);
+		string returned_path = get_Path(find, node->left->root, path);
 		if (returned_path != "")
 			return returned_path;
 
@@ -37,24 +37,24 @@ string HuffmanTree::get_Path(int to_find, HuffmanNode * node, string path)
 
 	if (node->right != nullptr) {
 		path.push_back('1');																
-		string returned_path = get_Path(to_find, node->right->root, path);
+		string returned_path = get_Path(find, node->right->root, path);
 		if (returned_path != "")
 			return returned_path;
 	}
 
-	return "";																				
+	return "";	//empty string																			
 }
 
 ostream& operator<<(ostream & out, const HuffmanTree & tree) {
 	if (&tree != nullptr && tree.root != nullptr) {
-		out << tree.weight;
+		out << tree.size;
 		out << *tree.root;
 	}
 
 	return out;
 }
 
-bool CompareHuffmanTree::operator() (const HuffmanTree * lhs, const HuffmanTree * rhs) const
+bool CompareHuffmanTree::operator() (const HuffmanTree * left, const HuffmanTree * right) const
 {
-	return lhs->weight > rhs->weight;
+	return left->size > right->size;
 }

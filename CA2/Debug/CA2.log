@@ -1,4 +1,6 @@
-﻿  TextCompression.cpp
+﻿  HuffmanNode.cpp
+  HuffmanTree.cpp
+  TextCompression.cpp
   main.cpp
   Generating Code...
   CA2.vcxproj -> D:\College\Year4\semester8\ALGO COMP\Algorithim-Computation4thYear\CA2\Debug\CA2.exe
