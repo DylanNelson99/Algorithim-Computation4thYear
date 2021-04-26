@@ -25,25 +25,62 @@ private:
 	static const int PSEUDO_EOF = 128;
 
 	//Encode
-	static string encodeText(const string& input, HuffmanTree*& huffman_tree_out);
-	static string encode_char_map(const string& input, const map<int, string>& char_encoding);
+	static string encodeText(
+		const string& input, HuffmanTree*& huffman_tree_out
+	);
+
+	static string encode_char_map(
+		const string& input, const map<int, string>& char_encoding
+	);
 	
 	//Mapping
-	static map<int, string> get_mapping_from_tree(HuffmanTree* huffman_tree, map<int, int> char_freq);
-	static HuffmanTree* get_huffman_tree_from_map(map<int, int> char_freq);
-	static priority_queue<HuffmanTree*, vector<HuffmanTree*>, CompareHuffmanTree> get_priority_queue_from_map(map<int, int> char_freq);
-	static void populate_char_frequency(const string& input, map<int, int>& char_freq);
+	static map<int, string> get_mapping_from_tree(
+		HuffmanTree* huffman_tree, 
+		map<int, 
+		int> char_freq
+	);
+
+	static HuffmanTree* get_huffman_tree_from_map(
+		map<int, int> char_freq
+	);
+
+	static priority_queue<HuffmanTree*, 
+		vector<HuffmanTree*>, 
+		CompareHuffmanTree> get_priority_queue_from_map(
+			map<int, 
+			int> char_freq
+		);
+
+	static void populate_char_frequency(
+		const string& input, map<int, 
+		int>& char_freq
+	);
 
 	//Decode
-	static string decode_text(const string& input, const HuffmanTree* huffman_tree);
+	static string decode_text(
+		const string& input, 
+		const HuffmanTree* huffman_tree
+	);
 
-	static void get_string_from_file(ifstream& in_file, string& out);
+	static void get_string_from_file(
+		ifstream& in_file, 
+		string& out
+	);
 
 	//Compression
-	static void get_compressed_string(string& encode_string, string& compress_string_out);
-	static void pad_string_with_zeros(string& to_pad);
+	static void get_compressed_string(
+		string& encode_string,
+		string& compress_string_out
+	);
 
-	static void get_binary_string(const string& encode_string, string& binary_string_out);
+	static void pad_string_with_zeros(
+		string& to_pad
+	);
+
+	static void get_binary_string(
+		const string& encode_string, 
+		string& binary_string_out
+	);
 
 	//Encode HuffmanTree
 
@@ -53,25 +90,57 @@ private:
 	Link: https://engineering.purdue.edu/ece264/17au/hw/HW13?alt=huffman
 	*/
 
-	static string encode_huffmantree(HuffmanTree* huffman_tree);
-	static string encode_huffmantree_helper(HuffmanTree* huffman_tree, string& acc_string);
+	static string encode_huffmantree(
+		HuffmanTree* huffman_tree
+	);
+
+	static string encode_huffmantree_helper(HuffmanTree* huffman_tree,
+		string& acc_string
+	);
 
 	//Decode HuffmanTree
 	/*
 	Same link used for decode as encode
 	*/
-	static HuffmanTree* decode_huffman_tree(const string& binary_string, const unsigned int binary_bits);
+	static HuffmanTree* decode_huffman_tree(
+		const string& binary_string,
+		const unsigned int binary_bits
+	);
 
 public:
 	//Encode
-	static string encode_input_text(const string& input, ofstream& out_file, HuffmanTree*& huffman_tree_out);					
-	static HuffmanTree* encode_input_to_file(ifstream& in_file, ofstream& out_file);
+	static string encode_input_text(
+		const string& input,
+		ofstream& out_file,
+		HuffmanTree*& huffman_tree_out
+	);			
+
+	static HuffmanTree* encode_input_to_file(
+		ifstream& in_file,
+		ofstream& out_file
+	);
 
 	//Decode
-	static string decode_input_text(const string& input, ofstream& out_file, const HuffmanTree* huffman_tree);					
-	static void decode_input_to_file(ifstream& in_file, ofstream& out_file, const HuffmanTree* huffman_tree);
+	static string decode_input_text(
+		const string& input,
+		ofstream& out_file,
+		const HuffmanTree* huffman_tree
+	);			
+
+	static void decode_input_to_file(
+		ifstream& in_file,
+		ofstream& out_file,
+		const HuffmanTree* huffman_tree
+	);
 
 	//Compress HuffmanTree
-	static HuffmanTree* compress_input(ifstream& in_file, ofstream& out_file);
-	static void decompress_input_file(ifstream& in_file, ofstream& out_file, const HuffmanTree* huffman_tree);
+	static HuffmanTree* compress_input(
+		ifstream& in_file,
+		ofstream& out_file
+	);
+
+	static void decompress_input_file(ifstream& in_file,
+		ofstream& out_file,
+		const HuffmanTree* huffman_tree
+	);
 };

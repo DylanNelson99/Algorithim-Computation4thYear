@@ -26,16 +26,31 @@ private:
 	HuffmanNode* root;
 	int size = -1;
 	string get_Path(int find);
-	string get_Path(int find, HuffmanNode* tree, string path);
+	string get_Path(
+		int find, 
+		HuffmanNode* tree,
+		string path
+	);
 
 	friend class TextCompression;
 	friend class CompareHuffmanTree;
-	friend ostream& operator<<(ostream& out, const HuffmanTree& tree);
+	friend ostream& operator<<(
+		ostream& out,
+		const HuffmanTree& tree
+		);
 
 public:
 	HuffmanTree();
-	HuffmanTree(int data_in, int size_in);
-	HuffmanTree(HuffmanTree* l_tree, HuffmanTree* r_node, int total_size);
+	HuffmanTree(
+		int data_in,
+		int size_in
+	);
+
+	HuffmanTree(
+		HuffmanTree* l_tree,
+		HuffmanTree* r_node,
+		int total_size
+	);
 };
 
 

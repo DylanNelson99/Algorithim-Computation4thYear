@@ -19,10 +19,20 @@ int main() {
 	/*****************************************************************************************/
 
 	//Encode text to 1's and 0's
-	ifstream start_in("Start.txt", ios::binary);
-	ofstream encode_out("Encode.txt", ios::binary);
+	ifstream start_in(
+		"Start.txt",
+		ios::binary
+	);
 
-	huffman_tree = TextCompression::encode_input_to_file(start_in, encode_out);
+	ofstream encode_out(
+		"Encode.txt",
+		ios::binary
+	);
+
+	huffman_tree = TextCompression::encode_input_to_file(
+		start_in,
+		encode_out
+	);
 	//Closes opened files
 	start_in.close();
 	encode_out.close();
@@ -30,10 +40,20 @@ int main() {
 	/*****************************************************************************************/
 
 	//Decode back to normal text
-	ifstream encode_in("Encode.txt", ios::binary);
-	ofstream decode_out("Decode.txt", ios::binary);
+	ifstream encode_in(
+		"Encode.txt",
+		ios::binary
+	);
+	ofstream decode_out(
+		"Decode.txt",
+		ios::binary
+	);
 
-	TextCompression::decode_input_to_file(encode_in, decode_out, huffman_tree);
+	TextCompression::decode_input_to_file(
+		encode_in,
+		decode_out,
+		huffman_tree
+	);
 	//Closes opened files
 	encode_in.close();
 	decode_out.close();
@@ -41,11 +61,21 @@ int main() {
 	/*****************************************************************************************/
 
 	//Compress file
-	start_in.open("Start.txt", ios::binary);
-	ofstream compress_out("Compress.txt", ios::binary);
+	start_in.open(
+		"Start.txt",
+		ios::binary
+	);
+
+	ofstream compress_out(
+		"Compress.txt",
+		ios::binary
+	);
 
 	huffman_tree = nullptr;
-	huffman_tree = TextCompression::compress_input(start_in, compress_out);
+	huffman_tree = TextCompression::compress_input(
+		start_in,
+		compress_out
+	);
 	//Closes opened files
 	start_in.close();
 	compress_out.close();
@@ -53,10 +83,20 @@ int main() {
 	/*****************************************************************************************/
 
 	//Decompress using Huffman Tree
-	ifstream compress_in("Compress.txt", ios::binary);
-	ofstream decompress_out("Decompress.txt", ios::binary);
+	ifstream compress_in(
+		"Compress.txt",
+		ios::binary
+	);
+	ofstream decompress_out(
+		"Decompress.txt",
+		ios::binary
+	);
 
-	TextCompression::decompress_input_file(compress_in, decompress_out, huffman_tree);
+	TextCompression::decompress_input_file(
+		compress_in,
+		decompress_out,
+		huffman_tree
+	);
 	//Closes opened files
 	compress_in.close();
 	decompress_out.close();
