@@ -1,3 +1,5 @@
+//Dylan Nelson - X00144862
+
 #include "TextCompression.h"
 #include <sstream>
 #include <bitset>

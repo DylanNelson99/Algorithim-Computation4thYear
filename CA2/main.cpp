@@ -1,3 +1,5 @@
+//Dylan Nelson - X00144862
+
 #include "TextCompression.h"
 #include <fstream>
 #include <iostream>
@@ -21,7 +23,7 @@ int main() {
 	ofstream encode_out("Encode.txt", ios::binary);
 
 	huffman_tree = TextCompression::encode_input_to_file(start_in, encode_out);
-	//Closes
+	//Closes opened files
 	start_in.close();
 	encode_out.close();
 
@@ -32,7 +34,7 @@ int main() {
 	ofstream decode_out("Decode.txt", ios::binary);
 
 	TextCompression::decode_input_to_file(encode_in, decode_out, huffman_tree);
-	//Closes
+	//Closes opened files
 	encode_in.close();
 	decode_out.close();
 
@@ -44,7 +46,7 @@ int main() {
 
 	huffman_tree = nullptr;
 	huffman_tree = TextCompression::compress_input(start_in, compress_out);
-	//Closes
+	//Closes opened files
 	start_in.close();
 	compress_out.close();
 
@@ -55,7 +57,7 @@ int main() {
 	ofstream decompress_out("Decompress.txt", ios::binary);
 
 	TextCompression::decompress_input_file(compress_in, decompress_out, huffman_tree);
-	//Closes
+	//Closes opened files
 	compress_in.close();
 	decompress_out.close();
 

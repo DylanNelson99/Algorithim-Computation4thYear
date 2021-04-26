@@ -1,3 +1,5 @@
+//Dylan Nelson - X00144862
+#include "HuffmanTree.h"
 #pragma once
 
 #include <iostream>

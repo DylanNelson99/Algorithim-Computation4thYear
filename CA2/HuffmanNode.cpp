@@ -1,5 +1,6 @@
+//Dylan Nelson - X00144862
+
 #include "HuffmanTree.h"																	
-#include "HuffmanNode.h"
 
 using namespace std;
 

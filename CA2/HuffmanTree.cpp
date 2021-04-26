@@ -1,5 +1,7 @@
-#include "HuffmanTree.h"
+//Dylan Nelson - X00144862
 
+#include "HuffmanTree.h"
+#include "HuffmanNode.h"
 using namespace std;
 
 HuffmanTree::HuffmanTree() = default;
@@ -14,6 +16,12 @@ HuffmanTree::HuffmanTree(HuffmanTree * l_tree, HuffmanTree * r_node, int total_s
 
 	root->left = l_tree;
 	root->right = r_node;
+}
+
+//Comparing HuffmanTree
+bool CompareHuffmanTree::operator() (const HuffmanTree * left, const HuffmanTree * right) const
+{
+	return left->size > right->size;
 }
 
 string HuffmanTree::get_Path(int find)
@@ -32,7 +40,7 @@ string HuffmanTree::get_Path(int find, HuffmanNode * node, string path)
 		if (returned_path != "")
 			return returned_path;
 
-		path.pop_back();																	
+		path.pop_back();	//back to end of queue																
 	}
 
 	if (node->right != nullptr) {
@@ -54,7 +62,3 @@ ostream& operator<<(ostream & out, const HuffmanTree & tree) {
 	return out;
 }
 
-bool CompareHuffmanTree::operator() (const HuffmanTree * left, const HuffmanTree * right) const
-{
-	return left->size > right->size;
-}
