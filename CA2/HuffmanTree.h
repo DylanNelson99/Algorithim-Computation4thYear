@@ -17,7 +17,7 @@ using namespace std;
 class CompareHuffmanTree
 {
 public:
-	bool operator() (const HuffmanTree* left, const HuffmanTree* right) const;
+	bool operator() (const HuffmanTree* leftPtr, const HuffmanTree* rightPtr) const;
 };
 
 class HuffmanTree
@@ -29,27 +29,27 @@ private:
 	string get_Path(
 		int find, 
 		HuffmanNode* tree,
-		string path
+		string Path
 	);
 
 	friend class TextCompression;
 	friend class CompareHuffmanTree;
 	friend ostream& operator<<(
-		ostream& out,
+		ostream& outputting,
 		const HuffmanTree& tree
 		);
 
 public:
 	HuffmanTree();
 	HuffmanTree(
-		int data_in,
+		int data,
 		int size_in
 	);
 
 	HuffmanTree(
-		HuffmanTree* l_tree,
-		HuffmanTree* r_node,
-		int total_size
+		HuffmanTree* left,
+		HuffmanTree* right,
+		int total
 	);
 };
 

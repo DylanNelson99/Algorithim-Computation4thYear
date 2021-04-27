@@ -14,12 +14,12 @@ class HuffmanNode
 private:
 	//Adding data members
 	int data = 0;
-	HuffmanTree* left = nullptr;
-	HuffmanTree* right = nullptr;
+	HuffmanTree* leftPtr = nullptr;
+	HuffmanTree* rightPtr = nullptr;
 	friend class HuffmanTree;
 	friend class TextCompression;
 	friend ostream& operator<<(
-		ostream& out,
+		ostream& outputting,
 		const HuffmanNode& node
 		);
 
@@ -27,6 +27,6 @@ public:
 	HuffmanNode();
 
 	HuffmanNode(
-		int data_in
+		int data
 	);
 };

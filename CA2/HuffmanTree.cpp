@@ -7,32 +7,32 @@ using namespace std;
 HuffmanTree::HuffmanTree() = default;
 
 HuffmanTree::HuffmanTree(
-	int data_in,
+	int data,
 	int size_in
 ) :
 	size{ size_in },
-	root{ new HuffmanNode(data_in) } {  }
+	root{ new HuffmanNode(data) } {  }
 
 HuffmanTree::HuffmanTree(
-	HuffmanTree * l_tree,
-	HuffmanTree * r_node,
-	int total_size
+	HuffmanTree * left,
+	HuffmanTree * right,
+	int total
 ) :
-	size{ total_size },
+	size{ total },
 	root{ new HuffmanNode() } {
 
-	root->left = l_tree;
-	root->right = r_node;
+	root->leftPtr = left;
+	root->rightPtr = right;
 }
 
 //Comparing HuffmanTree
 bool CompareHuffmanTree::operator() (
-	const HuffmanTree * left,
-	const HuffmanTree * right
+	const HuffmanTree * leftPtr,
+	const HuffmanTree * rightPtr
 	) 
 	const
 {
-	return left->size > right->size;
+	return leftPtr->size > rightPtr->size;
 }
 
 string HuffmanTree::get_Path(
@@ -45,23 +45,23 @@ string HuffmanTree::get_Path(
 string HuffmanTree::get_Path(
 	int find,
 	HuffmanNode * node,
-	string path
+	string Path
 ) {
 	if (node == nullptr || node->data == find)
-		return path;
+		return Path;
 
-	if (node->left != nullptr) {
-		path.push_back('0');																
-		string returned_path = get_Path(find, node->left->root, path);
+	if (node->leftPtr != nullptr) {
+		Path.push_back('0');																
+		string returned_path = get_Path(find, node->leftPtr->root, Path);
 		if (returned_path != "")
 			return returned_path;
 
-		path.pop_back();	//back to end of queue																
+		Path.pop_back();	//back to end of queue																
 	}
 
-	if (node->right != nullptr) {
-		path.push_back('1');																
-		string returned_path = get_Path(find, node->right->root, path);
+	if (node->rightPtr != nullptr) {
+		Path.push_back('1');																
+		string returned_path = get_Path(find, node->rightPtr->root, Path);
 		if (returned_path != "")
 			return returned_path;
 	}
@@ -70,14 +70,14 @@ string HuffmanTree::get_Path(
 }
 
 ostream& operator<<(
-	ostream & out,
+	ostream & outputting,
 	const HuffmanTree & tree
 	) {
 	if (&tree != nullptr && tree.root != nullptr) {
-		out << tree.size;
-		out << *tree.root;
+		outputting << tree.size;
+		outputting << *tree.root;
 	}
 
-	return out;
+	return outputting;
 }
 

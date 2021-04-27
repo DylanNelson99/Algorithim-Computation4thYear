@@ -6,17 +6,17 @@ using namespace std;
 
 HuffmanNode::HuffmanNode() = default;
 
-HuffmanNode::HuffmanNode(int data_in) : data{ data_in } {  }
+HuffmanNode::HuffmanNode(int data) : data{ data } {  }
 
 ostream& operator<<(
-	ostream & out, 
+	ostream & outputting, 
 	const HuffmanNode & node
 	) {
 	if (&node != nullptr && node.data != 0)
-		out << "\t" << node.data;
-	out << "\n";
-	out << *(node.left);
-	out << *(node.right);
+		outputting << "\t" << node.data;
+	outputting << "\n";
+	outputting << *(node.leftPtr);
+	outputting << *(node.rightPtr);
 
-	return out;
+	return outputting;
 }

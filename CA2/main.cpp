@@ -14,7 +14,7 @@ using namespace std;
 
 int main() {
 
-	HuffmanTree* huffman_tree;
+	HuffmanTree* tree;
 
 	/*****************************************************************************************/
 
@@ -29,7 +29,7 @@ int main() {
 		ios::binary
 	);
 
-	huffman_tree = TextCompression::encode_input_to_file(
+	tree = TextCompression::encode_input(
 		start_in,
 		encode_out
 	);
@@ -49,10 +49,10 @@ int main() {
 		ios::binary
 	);
 
-	TextCompression::decode_input_to_file(
+	TextCompression::decode_inputFile(
 		encode_in,
 		decode_out,
-		huffman_tree
+		tree
 	);
 	//Closes opened files
 	encode_in.close();
@@ -71,8 +71,8 @@ int main() {
 		ios::binary
 	);
 
-	huffman_tree = nullptr;
-	huffman_tree = TextCompression::compress_input(
+	tree = nullptr;
+	tree = TextCompression::compress_input(
 		start_in,
 		compress_out
 	);
@@ -92,10 +92,10 @@ int main() {
 		ios::binary
 	);
 
-	TextCompression::decompress_input_file(
+	TextCompression::decompress_inputFile(
 		compress_in,
 		decompress_out,
-		huffman_tree
+		tree
 	);
 	//Closes opened files
 	compress_in.close();
