@@ -4,8 +4,8 @@ You got 56/100 you didn’t lose any marks for bad practice.
 
 You received the following:
 
- 
-Part A 73% - Very good but you didn’t use the STL swap as requested. Also you didn’t list one of the main quick sort improvements (tail recursion, or use 
+Part A 73%:
+-Very good but you didn’t use the STL swap as requested. Also you didn’t list one of the main quick sort improvements (tail recursion, or use 
              insertion sort for small N)
 
  
