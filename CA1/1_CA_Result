@@ -9,13 +9,17 @@ Part A 73% - Very good but you didn’t use the STL swap as requested. Also you 
              insertion sort for small N)
 
  
-Part B 75% - Very good but you missed some possible optimizations.
+Part B 75%:
+-Very good but you missed some possible optimizations.
 
  
-Part  C 7% - no virtual methods, or pointers etc.
+Part  C 7%:
+-no virtual methods, or pointers etc.
 
  
-Part D 58% - Good but with some issues.
+Part D 58% :
+-Good but with some issues.
 
  
-Overall very good apart from Part C, also, you need to be careful with referencing code from the internet  and to stay within the specification.
+Overall: 
+-Very good apart from Part C, also, you need to be careful with referencing code from the internet  and to stay within the specification.
