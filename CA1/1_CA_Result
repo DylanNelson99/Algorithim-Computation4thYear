@@ -1,1 +1,20 @@
 Got a B- in this CA
+Comments :
+You got 56/100 you didn’t lose any marks for bad practice.
+
+You received the following:
+
+ 
+Part A 73% - Very good but you didn’t use the STL swap as requested. Also you didn’t list one of the main quick sort improvements (tail recursion, or use insertion sort for small N)
+
+ 
+Part B 75% - Very good but you missed some possible optimizations.
+
+ 
+Part  C 7% - no virtual methods, or pointers etc.
+
+ 
+Part D 58% - Good but with some issues.
+
+ 
+Overall very good apart from Part C, also, you need to be careful with referencing code from the internet  and to stay within the specification.
